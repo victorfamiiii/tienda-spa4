@@ -7,7 +7,7 @@ Características principales:
 - Listado de productos con imágenes (SVGs de ejemplo).
 - Carrito persistente en localStorage.
 - Páginas: Inicio, Mapa, Métodos de pago y envío, Carrito, Contacto.
-- Navegación con iconos acompañados de etiquetas accesibles; cada control incluye texto visible u oculto para lectores de pantalla para evitar depender solo de la forma o posición.
+- Navegación con iconos (metáforas) en lugar de texto donde es posible.
 - Docker + nginx para servir la web.
 - Plantilla para usar `cloudflared` y crear un túnel hacia el servidor local.
 
