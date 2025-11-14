@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mapa del sitio - MiTienda</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">MiTienda</div>
+  </header>
+  <main id="app" role="main">
+    <h1>Mapa del sitio</h1>
+    <p>Enlaces principales del sitio para facilitar la navegación:</p>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="#" onclick="location.hash='map';location.reload();">Mapa</a> (ruta SPA: <code>#map</code>)</li>
+      <li><a href="#" onclick="location.hash='shipping';location.reload();">Envío y pago</a> (ruta SPA: <code>#shipping</code>)</li>
+      <li><a href="#" onclick="location.hash='contact';location.reload();">Contacto</a> (ruta SPA: <code>#contact</code>)</li>
+      <li><a href="#" onclick="location.hash='cart';location.reload();">Carrito</a> (ruta SPA: <code>#cart</code>)</li>
+      <li><a href="prompts.txt">prompts.txt</a> (descripción de imágenes)</li>
+      <li><a href="products.json">products.json</a> (datos de productos)</li>
+    </ul>
+    <p>Si usas la navegación por hash (SPA), puedes usar los enlaces anteriores que configuran el hash del navegador.</p>
+    <p><a href="index.html">Volver al inicio</a></p>
+  </main>
+  <footer class="footer">
+    <small><a href="index.html">MiTienda</a></small>
+  </footer>
+</body>
+</html>
