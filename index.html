@@ -7,16 +7,37 @@
   <link rel="stylesheet" href="styles.css">
   <meta name="description" content="Tienda virtual de ejemplo — SPA con imágenes y prompts IA" />
 </head>
-<body>
+<body dir="auto">
   <header class="topbar">
     <div class="brand">MiTienda</div>
-    <nav class="nav" aria-label="Navegación principal">
+    <nav class="nav" aria-label="Navegación principal" dir="auto">
       <ul class="nav-list" dir="auto">
-        <li><button data-route="home" aria-label="Inicio" title="Inicio" class="icon-btn">🏠</button></li>
-        <li><button data-route="map" aria-label="Mapa" title="Mapa" class="icon-btn">🗺️</button></li>
-        <li><button data-route="shipping" aria-label="Envío y pago" title="Pago y envío" class="icon-btn">💳🚚</button></li>
-        <li><button data-route="contact" aria-label="Contacto" title="Contacto" class="icon-btn">📞</button></li>
-        <li><button data-route="cart" aria-label="Ver carrito" title="Carrito" class="icon-btn">🛒<span id="cart-count" class="badge">0</span></button></li>
+        <li>
+          <button type="button" data-route="home" aria-label="Inicio" title="Inicio" class="icon-btn">🏠
+            <span class="sr-only">Inicio</span>
+          </button>
+        </li>
+        <li>
+          <button type="button" data-route="map" aria-label="Mapa" title="Mapa" class="icon-btn">🗺️
+            <span class="sr-only">Mapa</span>
+          </button>
+        </li>
+        <li>
+          <button type="button" data-route="shipping" aria-label="Envío y pago" title="Pago y envío" class="icon-btn">💳🚚
+            <span class="sr-only">Pago y envío</span>
+          </button>
+        </li>
+        <li>
+          <button type="button" data-route="contact" aria-label="Contacto" title="Contacto" class="icon-btn">📞
+            <span class="sr-only">Contacto</span>
+          </button>
+        </li>
+        <li>
+          <button type="button" data-route="cart" aria-label="Ver carrito" title="Carrito" class="icon-btn">🛒
+            <span id="cart-count" class="badge">0</span>
+            <span class="sr-only">Ver carrito</span>
+          </button>
+        </li>
       </ul>
     </nav>
   </header>
