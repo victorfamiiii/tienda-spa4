@@ -52,13 +52,13 @@ async function renderHome(){
       <div class="center"><button class="btn" onclick="setRoute('cart')">Ir al carrito</button></div>
     </section>
     <section style="margin-top:16px">
-      <div class="grid" id="products-grid"></div>
+      <ul class="grid" id="products-grid" role="list"></ul>
     </section>
   `;
 
   const grid = document.getElementById('products-grid');
   products.forEach(p=>{
-    const el = document.createElement('article'); el.className='card';
+    const el = document.createElement('li'); el.setAttribute('role','listitem'); el.className='card';
     el.innerHTML = `
       <img src="${p.image}" alt="${p.prompt || p.name}" />
       <h3>${p.name}</h3>
@@ -67,7 +67,7 @@ async function renderHome(){
         <div class="price">€ ${p.price.toFixed(2)}</div>
         <div>
           <button class="btn" data-add="${p.id}">Añadir</button>
-          <button class="btn" data-view="${p.id}" style="background:#6c757d;margin-left:6px">Ver</button>
+          <button class="btn secondary" data-view="${p.id}">Ver</button>
         </div>
       </div>
     `;
@@ -90,7 +90,7 @@ function showModal(prod){
       <h2>${prod.name}</h2>
       <img src="${prod.image}" alt="${prod.prompt||prod.name}" style="width:100%;height:320px;object-fit:cover;border-radius:6px"/>
       <p class="small">${prod.description}</p>
-      <div class="meta"><div class="price">€ ${prod.price.toFixed(2)}</div><div><button class="btn" id="modal-add">Añadir al carrito</button> <button class="btn" id="modal-close" style="background:#6c757d">Cerrar</button></div></div>
+  <div class="meta"><div class="price">€ ${prod.price.toFixed(2)}</div><div><button class="btn" id="modal-add">Añadir al carrito</button> <button class="btn secondary" id="modal-close">Cerrar</button></div></div>
     </div>
   `;
   document.body.appendChild(modal);
@@ -135,7 +135,7 @@ async function renderCart(){
   app.innerHTML = `
     <section class="page">
       <h2>Carrito</h2>
-      <div class="cart-list" id="cart-list"></div>
+      <ul class="cart-list" id="cart-list" role="list"></ul>
       <div style="margin-top:12px" id="cart-summary"></div>
     </section>
   `;
@@ -146,8 +146,8 @@ async function renderCart(){
     const prod = products.find(p=>p.id===id);
     if(!prod) continue;
     total += prod.price * qty;
-    const node = document.createElement('div'); node.className='cart-item';
-    node.innerHTML = `<img src="${prod.image}" alt="${prod.prompt||prod.name}" style="width:80px;height:60px;object-fit:cover;border-radius:6px"/><div style="flex:1"><div>${prod.name}</div><div class="small">€ ${prod.price.toFixed(2)} x ${qty}</div></div><div><button class="btn" data-plus="${id}">+</button> <button class="btn" data-minus="${id}" style="background:#6c757d">-</button></div>`;
+  const node = document.createElement('li'); node.setAttribute('role','listitem'); node.className='cart-item';
+  node.innerHTML = `<img src="${prod.image}" alt="${prod.prompt||prod.name}" style="width:80px;height:60px;object-fit:cover;border-radius:6px"/><div style="flex:1"><div>${prod.name}</div><div class="small">€ ${prod.price.toFixed(2)} x ${qty}</div></div><div><button class="btn" data-plus="${id}" aria-label="Incrementar cantidad">+</button> <button class="btn secondary" data-minus="${id}" aria-label="Disminuir cantidad">-</button></div>`;
     list.appendChild(node);
   }
   const summary = document.getElementById('cart-summary');
