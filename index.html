@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" dir="ltr">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -10,12 +10,14 @@
 <body>
   <header class="topbar">
     <div class="brand">MiTienda</div>
-    <nav class="nav">
-      <button data-route="home" aria-label="Inicio" title="Inicio" class="icon-btn">🏠</button>
-      <button data-route="map" aria-label="Mapa" title="Mapa" class="icon-btn">🗺️</button>
-      <button data-route="shipping" aria-label="Envío y pago" title="Pago y envío" class="icon-btn">💳🚚</button>
-      <button data-route="contact" aria-label="Contacto" title="Contacto" class="icon-btn">📞</button>
-      <button data-route="cart" aria-label="Ver carrito" title="Carrito" class="icon-btn">🛒<span id="cart-count" class="badge">0</span></button>
+    <nav class="nav" aria-label="Navegación principal">
+      <ul class="nav-list" dir="auto">
+        <li><button data-route="home" aria-label="Inicio" title="Inicio" class="icon-btn">🏠</button></li>
+        <li><button data-route="map" aria-label="Mapa" title="Mapa" class="icon-btn">🗺️</button></li>
+        <li><button data-route="shipping" aria-label="Envío y pago" title="Pago y envío" class="icon-btn">💳🚚</button></li>
+        <li><button data-route="contact" aria-label="Contacto" title="Contacto" class="icon-btn">📞</button></li>
+        <li><button data-route="cart" aria-label="Ver carrito" title="Carrito" class="icon-btn">🛒<span id="cart-count" class="badge">0</span></button></li>
+      </ul>
     </nav>
   </header>
 
